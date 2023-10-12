@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <label>First number:</label>
+    <input type="number" id="first_num" value="0"><br><br>
+    <label>Second number:</label>
+    <input type="number" id="second_num" value="0"><br><br>    
+    <div id="ans"></div>
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>            
+<script>
+    function add(){
+        first= parseFloat(document.getElementById("first_num").value)
+        second= parseFloat(document.getElementById("second_num").value)
+
+        
+        let third= first + second 
+        document.getElementById("ans").innerHTML=third}
+
+    
+    function subtract(){
+        first= parseFloat(document.getElementById("first_num").value)
+        second= parseFloat(document.getElementById("second_num").value)
+
+        let third= first - second 
+        document.getElementById("ans").innerHTML=third
+
+    }
+    function multiply(){
+        
+        first= parseFloat(document.getElementById("first_num").value)
+        second= parseFloat(document.getElementById("second_num").value)
+
+        let third= first * second 
+        document.getElementById("ans").innerHTML=third}
+
+    
+    function divide(){
+        first= parseFloat(document.getElementById("first_num").value)
+        second= parseFloat(document.getElementById("second_num").value)
+
+       // document.getElementById("ans").innerHTML
+        let myPromise = new Promise(function(myResolve, myReject) {
+            
+            
+          
+          
+          
+            if (second != 0) {
+              myResolve(first/second);
+            } else {
+              myReject("Error");
+            }
+          });
+          
+          myPromise.then(
+            function(value) {document.getElementById("ans").innerHTML=value;},
+            function(value) {alert(value)}
+          );
+        }
+             
+</script>
+
+</body>
+</html>
